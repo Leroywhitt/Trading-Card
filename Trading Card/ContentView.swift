@@ -12,7 +12,8 @@ struct ContentView: View {
     @State private var heartPulse: CGFloat = 1
     var body: some View {
         ZStack{
-         //   Color.green.ignoresSafeArea()
+            
+            //   Color.green.ignoresSafeArea()
             VStack {
                 Text("Leroy Whitt")
                     .font(.largeTitle)
@@ -33,14 +34,14 @@ struct ContentView: View {
                             .stroke(.blue, style: StrokeStyle(lineWidth: 15))
                     )
                     .frame(width: 300, height: 300)
-                                .foregroundColor(.red)
-                                .scaleEffect(heartPulse)
-                                .shadow(color: .pink, radius: 10)
-                                .onAppear{
-                                    withAnimation(.easeInOut.speed(0.2).repeatForever(autoreverses: true)) {
-                                        heartPulse = 1.25 * heartPulse
-                                    }
-                                }
+                    .foregroundColor(.red)
+                    .scaleEffect(heartPulse)
+                    .shadow(color: .pink, radius: 10)
+                    .onAppear{
+                        withAnimation(.easeInOut.speed(0.2).repeatForever(autoreverses: true)) {
+                            heartPulse = 1.25 * heartPulse
+                        }
+                    }
                     .onTapGesture {
                         sheet.toggle()
                     }
@@ -59,12 +60,12 @@ struct ContentView: View {
                     
                 }
                 Spacer()
-               
+                
                 HStack {
                     Text("Strengths:")
                         .bold()
                     Text("Highly intelligent, extremely charming, wity, and savy.")
-                     
+                    
                         .cornerRadius(5)
                         .shadow(color: .blue, radius: 5)
                 }
@@ -78,17 +79,18 @@ struct ContentView: View {
             }
             .padding()
             
-        .padding()
+            .padding()
             
         }
         .background(
             LinearGradient(gradient: Gradient(colors: [.white, .red]), startPoint: .top, endPoint: .bottom)
-            )
+        )
     }
+}
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
         }
     }
-}
+

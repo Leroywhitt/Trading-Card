@@ -11,7 +11,8 @@ import SwiftUI
 struct Trading_CardApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
+            
         }
     }
 }
